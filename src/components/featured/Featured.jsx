@@ -30,14 +30,14 @@ const Featured = () => {
                     </div>
                 </div>
                 <div className="item">
-                    <div className="itemTitle">Target</div>
+                    <div className="itemTitle">Last Week</div>
                     <div className="itemResult positive">
                         <KeyboardArrowUpIcon fontSize='small'/>
                         <div className="resultAmount">$12.45</div>
                     </div>
                 </div>
                 <div className="item">
-                    <div className="itemTitle">Target</div>
+                    <div className="itemTitle">Last month</div>
                     <div className="itemResult positive">
                         <KeyboardArrowUpIcon fontSize='small'/>
                         <div className="resultAmount">$12.45</div>
