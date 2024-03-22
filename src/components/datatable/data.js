@@ -1,89 +1,103 @@
 export const columns = [
   { field: "id", headerName: "ID", width: 70 },
   {
-    field: "firstName",
-    headerName: "First name",
+    field: "username",
+    headerName: "User name",
     width: 130,
     renderCell: (props) => {
       return (
         <div className="cellWithImg">
           <img className="cellImg" src={props.row.img} alt="avatar" />
-          {props.row.firstName}
+          {props.row.username}
         </div>
       );
     },
   },
-  { field: "lastName", headerName: "Last name", width: 130 },
+  { field: "status", headerName: "Status", width: 90 },
   {
     field: "age",
     headerName: "Age",
     type: "number",
-    width: 90,
+    width: 150,
+  },
+  {
+    field: "email",
+    headerName: "Email",
+    width: 180,
   },
 ];
 
 export const rows = [
   {
     id: 1,
-    lastName: "Snow",
-    firstName: "Jon",
+    username: "Snow",
+    status: "Active",
     age: 35,
+    email: "Snow@gmail.com",
     img: "https://i.guim.co.uk/img/media/c001a1444cc7dc29768ff55dfa283d0ea25651e1/0_312_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f1548cf556b8a96d24246c1f4d52d6e9",
   },
   {
     id: 2,
-    lastName: "Lannister",
-    firstName: "Cersei",
+    username: "Lannister",
+    status: "Pending",
     age: 42,
+    email: "lannister@gmail.com",
     img: "https://i.guim.co.uk/img/media/c001a1444cc7dc29768ff55dfa283d0ea25651e1/0_312_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f1548cf556b8a96d24246c1f4d52d6e9",
   },
   {
     id: 3,
-    lastName: "Lannister",
-    firstName: "Jaime",
+    username: "Lannister",
+    status: "Active",
     age: 45,
+    email: "lannister@gmail.com",
     img: "https://i.guim.co.uk/img/media/c001a1444cc7dc29768ff55dfa283d0ea25651e1/0_312_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f1548cf556b8a96d24246c1f4d52d6e9",
   },
   {
     id: 4,
-    lastName: "Stark",
-    firstName: "Arya",
+    username: "Stark",
+    status: "Pending",
     age: 16,
+    email: "stark@gmail.com",
     img: "https://i.guim.co.uk/img/media/c001a1444cc7dc29768ff55dfa283d0ea25651e1/0_312_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f1548cf556b8a96d24246c1f4d52d6e9",
   },
   {
     id: 5,
-    lastName: "Targaryen",
-    firstName: "Daenerys",
+    username: "Targaryen",
+    status: "Active",
     age: 53,
+    email: "targaryen@gmail.com",
     img: "https://i.guim.co.uk/img/media/c001a1444cc7dc29768ff55dfa283d0ea25651e1/0_312_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f1548cf556b8a96d24246c1f4d52d6e9",
   },
   {
     id: 6,
-    lastName: "Melisandre",
-    firstName: "Sosa",
+    username: "Melisandre",
+    status: "Pending",
     age: 150,
+    email: "melisandre@gmail.com",
     img: "https://i.guim.co.uk/img/media/c001a1444cc7dc29768ff55dfa283d0ea25651e1/0_312_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f1548cf556b8a96d24246c1f4d52d6e9",
   },
   {
     id: 7,
-    lastName: "Clifford",
-    firstName: "Ferrara",
+    username: "Clifford",
+    status: "Active",
     age: 44,
+    email: "clifford@gmail.com",
     img: "https://i.guim.co.uk/img/media/c001a1444cc7dc29768ff55dfa283d0ea25651e1/0_312_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f1548cf556b8a96d24246c1f4d52d6e9",
   },
   {
     id: 8,
-    lastName: "Frances",
-    firstName: "Rossini",
+    username: "Frances",
+    status: "Pendgin",
     age: 36,
+    email: "frances@gmail.com",
     img: "https://i.guim.co.uk/img/media/c001a1444cc7dc29768ff55dfa283d0ea25651e1/0_312_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f1548cf556b8a96d24246c1f4d52d6e9",
   },
   {
     id: 9,
-    lastName: "Roxie",
-    firstName: "Harvey",
+    username: "Roxie",
+    status: "Active",
     age: 65,
+    email: "roxie@gmail.com",
     img: "https://i.guim.co.uk/img/media/c001a1444cc7dc29768ff55dfa283d0ea25651e1/0_312_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f1548cf556b8a96d24246c1f4d52d6e9",
   },
 ];
