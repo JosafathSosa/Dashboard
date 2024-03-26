@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./sidebar.scss";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonIcon from "@mui/icons-material/Person";
@@ -13,37 +13,55 @@ import LoginIcon from "@mui/icons-material/Login";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+
 const Sidebar = () => {
+  const { dispatch } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
+
+  const logOut = async () => {
+    try {
+      dispatch({ type: "LOGOUT", payload: currentUser });
+    } catch (error) {
+      console.error("Error during logout:", error);
+    }
+  };
+
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">Josafath</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">Josafath</span>
+        </Link>
       </div>
       <hr />
       <div className="center">
         <p className="title">Main</p>
         <ul>
-          <li>
-            <DashboardIcon className="icon" />
-            <a href="/" style={{ borderStyle: 0 }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <li>
+              <DashboardIcon className="icon" />
               <span>Dashboards</span>
-            </a>
-          </li>
+            </li>
+          </Link>
         </ul>
         <p className="title">Lists</p>
         <ul>
-          <li>
-            <PersonIcon className="icon" />
-            <a href="/users">
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonIcon className="icon" />
               <span>Users</span>
-            </a>
-          </li>
+            </li>
+          </Link>
         </ul>
         <ul>
-          <li>
-            <StoreIcon className="icon" />
-            <span>Products</span>
-          </li>
+          <Link to="/products" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Products</span>
+            </li>
+          </Link>
         </ul>
         <ul>
           <li>
@@ -99,7 +117,7 @@ const Sidebar = () => {
         <ul>
           <li>
             <LoginIcon className="icon" />
-            <span>Logout</span>
+            <span onClick={logOut}>Logout</span>
           </li>
         </ul>
       </div>
