@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 import "./single.scss";
 
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -7,6 +9,29 @@ import Chart from "../../components/chart/Chart";
 import Table from "../../components/table/Table";
 
 const Single = () => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      let list = [];
+
+      try {
+        const querySnapshot = await getDocs(collection(db, "users"));
+        querySnapshot.forEach((doc) => {
+          list.push({ id: doc.id, ...doc.data() });
+        });
+        setData(list);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (data !== null) {
+    console.log(data);
+  }
+  console.log(data);
+
   return (
     <div className="single">
       <Sidebar />
